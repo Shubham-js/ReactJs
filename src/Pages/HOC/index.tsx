@@ -1,14 +1,21 @@
 import React from 'react'
+import withLogging from './withLogging.jsx'
+import MyComponent from './MyComonent.tsx'
+
+const EnhancedComponent = withLogging(MyComponent)
+
 const HOC = () => {
     return (
         <>
             <h1>Higher order components</h1>
             <p>
-                A higher-order component (HOC) is an advanced technique in React
-                for reusing component logic. HOCs are not part of the React API,
-                per se. They are a pattern that emerges from React’s
-                compositional nature.
+                In React, a higher-order component is a function that takes a
+                component as an argument and returns a new component that wraps
+                the original component. HOCs allow you to add additional
+                functionality to a component without modifying the component's
+                code.
             </p>
+            <EnhancedComponent message="Hello, World!" />
         </>
     )
 }
